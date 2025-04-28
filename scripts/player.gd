@@ -68,6 +68,7 @@ func attack():
 
 	attacking = true
 	sprite.play("attack")
+	$AttackSFX.play()
 	#print("Player attacked the enemy!")
 
 	var overlapping_bodies = attack_area.get_overlapping_bodies()
@@ -100,6 +101,7 @@ func hit():
 	
 	hurt = true
 	sprite.play("hurt")
+	
 	await sprite.animation_finished
 	hurt = false
 

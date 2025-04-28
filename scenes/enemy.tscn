@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://dl8dmimm33t7n"]
+[gd_scene load_steps=38 format=3 uid="uid://dl8dmimm33t7n"]
 
 [ext_resource type="Script" uid="uid://gws0i72ccpo5" path="res://scripts/enemy.gd" id="1_7p1mj"]
 [ext_resource type="Texture2D" uid="uid://33dp4ago7v4i" path="res://assets/textures/Ghoul Sprite Sheet.png" id="2_md0e3"]
+[ext_resource type="AudioStream" uid="uid://copsp31kkhl0p" path="res://sound_effects/PUNCH_CLEAN_HEAVY_10.wav" id="3_4ra3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
 atlas = ExtResource("2_md0e3")
@@ -280,6 +281,9 @@ theme_override_styles/background = SubResource("StyleBoxFlat_md0e3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4ra3w")
 value = 100.0
 show_percentage = false
+
+[node name="Attack2SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4ra3w")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

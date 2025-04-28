@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b7fcvjqsc76qi"]
+[gd_scene load_steps=73 format=3 uid="uid://b7fcvjqsc76qi"]
 
 [ext_resource type="Script" uid="uid://bntm2jmaxnlsi" path="res://scripts/player.gd" id="1_wvd2u"]
 [ext_resource type="Texture2D" uid="uid://myp5xh7cj80v" path="res://assets/textures/_Idle.png" id="2_8bclm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cx8sguanq7vwa" path="res://assets/textures/_Hit.png" id="7_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://brn4xn67o6g11" path="res://assets/textures/_CrouchWalk.png" id="7_53fm4"]
 [ext_resource type="Texture2D" uid="uid://bmtrw852nshwj" path="res://assets/textures/_AttackCombo.png" id="9_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://bh48plt228pjm" path="res://sound_effects/WHOOSH_ARM_SWING_01.wav" id="12_3v2ag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("9_ur7pv")
@@ -503,3 +504,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_d2wvv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3v2ag")
 value = 100.0
 show_percentage = false
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_3v2ag")

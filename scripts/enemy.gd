@@ -91,6 +91,7 @@ func attack():
 
 	attacking = true
 	sprite.play("attack")
+	$Attack2SFX.play()
 	can_attack = false
 
 	if player_in_attack_range:
