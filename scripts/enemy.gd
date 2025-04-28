@@ -148,3 +148,7 @@ func die():
 	
 	await sprite.animation_finished
 	queue_free()
+	
+	var player = get_tree().current_scene.get_node("Player")
+	if player:
+		player.check_victory()

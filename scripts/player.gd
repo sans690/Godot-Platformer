@@ -133,5 +133,29 @@ func die():
 	sprite.play("die")  
 	print("Player has died!")
 	await sprite.animation_finished
+	
+	var restart_screen = get_tree().current_scene.get_node("ScreenOverlay(Restart)")
+	restart_screen.show_restart()
+
 	queue_free()
+	
+	
+func check_victory():
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	print("Enemies found:", enemies.size())
+
+	if enemies.is_empty():
+		print("No enemies found!")
+		var victory_screen = get_tree().current_scene.get_node("ScreenOverlay(Victory)")
+		victory_screen.show_victory()
+		return
+	
+	for enemy in enemies:
+		print("Checking enemy:", enemy.name, "Dead?:", enemy.dead)
+		if not enemy.dead:
+			return
+
+	print("All enemies defeated!")
+	var victory_screen = get_tree().current_scene.get_node("ScreenOverlay(Victory)")
+	victory_screen.show_victory()
 	

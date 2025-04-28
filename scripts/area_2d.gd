@@ -19,4 +19,4 @@ func _on_body_exited(body):
 func _process(delta):
 	if player_in_area and Input.is_physical_key_pressed(KEY_Q):
 		print("Q pressed while in area")
-		get_tree().change_scene_to_file("res://scenes/main_room.tscn")
+		get_tree().change_scene_to_file("res://scenes/room.tscn")
